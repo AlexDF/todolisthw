@@ -11,6 +11,7 @@
 			<header id="header">
 				<h1>todos</h1>
 				<input id="new-todo" placeholder="What needs to be done?" autofocus>
+				<input id="new-todo-date" type="date">
 			</header>
 			<section id="main">
 				<input id="toggle-all" type="checkbox">
@@ -27,9 +28,15 @@
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-				<label><%- title %></label>
+				<label><%- title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%- date %></label>
 				<button class="destroy"></button>
 			</div>
+			<!--<div class="view">
+				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+				<input type="date">
+				<label><%- title %></label>
+				<button class="destroy"></button>
+			</div>-->
 			<input class="edit" value="<%- title %>">
 		</script>
 		<script type="text/template" id="stats-template">
