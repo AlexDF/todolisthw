@@ -19,7 +19,8 @@ var app = app || {};
 
 		// Delegated events for creating new items, and clearing completed ones.
 		events: {
-			'keypress #new-todo': 'createOnEnter',
+			'keypress #new-todo': 'createOnEnter', 
+			'keypress #new-todo-date': 'createOnEnter',
 			'click #clear-completed': 'clearCompleted',
 			'click #toggle-all': 'toggleAllComplete'
 		},
@@ -30,6 +31,7 @@ var app = app || {};
 		initialize: function () {
 			this.allCheckbox = this.$('#toggle-all')[0];
 			this.$input = this.$('#new-todo');
+			this.$inputdate = this.$('#new-todo-date');
 			this.$footer = this.$('#footer');
 			this.$main = this.$('#main');
 			this.$list = $('#todo-list');
@@ -97,7 +99,8 @@ var app = app || {};
 		// Generate the attributes for a new Todo item.
 		newAttributes: function () {
 			return {
-				title: this.$input.val().trim(),
+				title: this.$input.val().trim(), 
+				date: this.$inputdate.val().trim(),
 				order: app.todos.nextOrder(),
 				completed: false
 			};
@@ -109,6 +112,7 @@ var app = app || {};
 			if (e.which === ENTER_KEY && this.$input.val().trim()) {
 				app.todos.create(this.newAttributes());
 				this.$input.val('');
+				this.$inputdate.val('');
 			}
 		},
 
