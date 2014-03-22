@@ -3,15 +3,16 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Backbone.js • TodoMVC</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
 		<link rel="stylesheet" href="bower_components/todomvc-common/base.css">
 		<script src="../js/vendor/modernizr-2.7.1.min.js"></script>
 	</head>
-	<body class="swipable">
-		<section id="todoapp">
+	<body>
+		<section id="todoapp" style="width:95%; margin-left:auto; margin-right:auto;">
 			<header id="header">
 				<h1>todos</h1>
-				<input id="new-todo" placeholder="What needs to be done?" autofocus>
-				<input id="new-todo-date" type="date">
+				<input style="line-height:60px;" id="new-todo" placeholder="What needs to be done?" autofocus>
+				<input style="line-height:60px;" id="new-todo-date" type="date">
 			</header>
 			<section id="main">
 				<input id="toggle-all" type="checkbox">
@@ -29,9 +30,9 @@
 			<div class="view">
 				<div class="entry" style="display:block;">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-				<label style="width:225px; display:inline-block;"><%- title %></label>
-				<label style="width:100px; font-size:70%; display:inline-block; margin-left:0px; padding-left:0px; padding-right:0px;"><%- date %></label>
-				<button class="destroy" style="background-color:yellow;"></button>
+				<label style="width:225px; display:inline-block; font:bold 150% Arial, sans-serif; -webkit-user-select:none; height:60px; line-height:60px;"><%- title %></label>
+				<label style="float:right; width:175px; text-align:center; font:bold 125% Arial, sans-serif; display:inline-block; margin-right:75px; padding-left:0px; padding-right:0px; -webkit-user-select:none; height:60px; line-height:60px;"><%- date %></label>
+				<button class="destroy"></button>
 				</div>
 			</div>
 			<input class="edit" value="<%- title %>">
@@ -58,6 +59,7 @@
 		<script src="bower_components/todomvc-common/base.js"></script>
 		<script src="bower_components/jquery/jquery.js"></script>
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 		<script src="bower_components/underscore/underscore.js"></script>
 		<script src="bower_components/backbone/backbone.js"></script>
 		<script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
@@ -70,22 +72,6 @@
 		<script src="js/views/app-view.js"></script>
 		<script src="js/routers/router.js"></script>
 		<script src="js/app.js"></script>
-		
-		
-		
-		
-		<script type="text/javascript">
-		//var item = $("h1").text();
-		//alert(item);
-		var hammertime = Hammer(item).on("dragleft", function() {
-			
-			alert("You swiped me!");
-			
-		})
-		
-		
-		
-		</script>-->
 		
 		
 	</body>

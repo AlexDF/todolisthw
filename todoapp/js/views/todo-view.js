@@ -17,7 +17,7 @@ var app = app || {};
 
 		// The DOM events specific to an item.
 		events: {
-			'drag label': 'toggleCompleted',
+			'swipe label': 'toggleCompleted',
 			'click .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
