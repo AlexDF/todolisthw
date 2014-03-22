@@ -17,6 +17,7 @@ var app = app || {};
 
 		// The DOM events specific to an item.
 		events: {
+			'drag input': 'toggleCompleted',
 			'click .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
@@ -70,6 +71,7 @@ var app = app || {};
 		// Toggle the `"completed"` state of the model.
 		toggleCompleted: function () {
 			this.model.toggle();
+			
 		},
 
 		// Switch this view into `"editing"` mode, displaying the input field.

@@ -23,5 +23,7 @@ var app = app || {};
 				completed: !this.get('completed')
 			});
 		}
+		
+		
 	});
 })();
